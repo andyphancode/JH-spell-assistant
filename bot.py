@@ -3,6 +3,7 @@ from discord.ext import commands
 from dotenv import load_dotenv
 import os
 import jamspell
+from secret import to_ye_olde_english
 
 # Load environment variables from .env file
 load_dotenv()
@@ -33,6 +34,28 @@ async def fix(ctx, *, sentence: str):
     # Correct the sentence using JamSpell
     corrected_sentence = corrector.FixFragment(sentence)
     await ctx.send(f"The message you are correcting is:\n ```{sentence}```\n This is what I think it is:\n```{corrected_sentence}```")
+
+@bot.command()
+async def secret(ctx):
+     # Check if the message is a reply
+    if ctx.message.reference is None:
+        await ctx.send("Please reply to a message you want to correct. This command only works with replies.")
+        return
+
+    # Fetch the referenced message
+    referenced_message = await ctx.channel.fetch_message(ctx.message.reference.message_id)
+    sentence = referenced_message.content
+
+    # Correct the sentence using JamSpell
+    corrected_sentence = corrector.FixFragment(sentence)
+    
+    # Turn it into ye olde english
+    giga_corrected_sentence = to_ye_olde_english(corrected_sentence)
+
+    # Send the corrected sentence
+    await ctx.send(f"The user you are correcting sent:\n```{sentence}```\nThis is what I think it means:\n```{giga_corrected_sentence}```")
+
+
 
 @bot.command()
 async def re(ctx):
