@@ -23,4 +23,9 @@ async def on_ready():
 async def ping(ctx):
     await ctx.send('This is JH bot at your service, ready to figure out whatever your friend typed.')
 
+@bot.command()
+async def fix(ctx, *, sentence: str):
+    await ctx.send(sentence)
+
+
 bot.run(TOKEN)
