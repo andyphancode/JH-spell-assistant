@@ -76,4 +76,6 @@ async def re(ctx):
 
 
 
-bot.run(TOKEN)
+def lambda_handler(event, context):
+    # Handle Discord events (e.g., messages, reactions)
+    bot.run(TOKEN)
