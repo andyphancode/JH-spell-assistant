@@ -1,0 +1,11 @@
+- name: commands
+  description: Shows available commands.
+
+- name: re
+  description: Corrects message you replied to.
+
+- name: fix
+  description: Corrects message you input.
+
+- name: secret
+  description: Reply, try and see!
