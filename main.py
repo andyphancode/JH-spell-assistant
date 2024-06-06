@@ -39,6 +39,14 @@ def interact(raw_request):
                 original_message = raw_request["message"]["referenced_message"]["content"]
                 corrected_message = corrector.FixFragment(original_message)
                 message_content = f"The user you are correcting sent:\n```{original_message}```\nThis is what I think it means:\n```{corrected_message}```"
+        elif command_name == "secret":
+            if "referenced_message" not in raw_request["message"] or raw_request["message"]["referenced_message"] is None:
+                message_content = "Please reply to a message you want to correct. This command only works with replies."
+            else:
+                original_message = raw_request["message"]["referenced_message"]["content"]
+                corrected_message = corrector.FixFragment(original_message)
+                giga_corrected_message = to_ye_olde_english(corrected_message)
+                message_content = f"The user you are correcting sent:\n```{original_message}```\nThis is what I think it means:\n```{giga_corrected_message}```"
 
 
 
