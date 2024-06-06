@@ -6,6 +6,11 @@
 
 - name: fix
   description: Corrects message you input.
+  options:
+    - name: message
+      description: The message to fix.
+      type: 3
+      required: true
 
 - name: secret
   description: Reply, try and see!
