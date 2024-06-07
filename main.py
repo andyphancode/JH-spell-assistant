@@ -1,9 +1,11 @@
 import os
+from dotenv import load_dotenv
 from flask import Flask, jsonify, request
 import jamspell
 from secret import to_ye_olde_english
 
-
+load_dotenv()
+DISCORD_PUBLIC_KEY = os.getenv('DISCORD_PUBLIC_KEY')
 
 app = Flask(__name__)
 # Initialize jamspell
