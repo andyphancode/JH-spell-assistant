@@ -1,11 +1,17 @@
 .env
 __pycache__
+test_request.json
 
-
+# AWS files
+.aws-sam/
+.aws/
+aws
 *.js
 !jest.config.js
 *.d.ts
 node_modules
+bin
+lib
 
 # CDK asset staging directory
 .cdk.staging
