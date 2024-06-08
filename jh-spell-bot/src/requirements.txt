@@ -1,8 +1,0 @@
-requests
-pyyaml
-python-dotenv
-pyspellchecker
-discord-interactions
-mangum
-asgiref
-flask
