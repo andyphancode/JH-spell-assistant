@@ -1,11 +1,9 @@
 - name: commands
   description: Shows available commands.
 
-- name: re
-  description: Corrects message you replied to.
 
 - name: fix
-  description: Corrects message you input.
+  description: Corrects message you input. Currently doesn't support emotes not part of native keyboards.
   options:
     - name: message
       description: The message to fix.
@@ -13,4 +11,9 @@
       required: true
 
 - name: secret
-  description: Reply, try and see!
+  description: Try and see!
+  options:
+    - name: message
+      description: The message to fix.
+      type: 3
+      required: true
