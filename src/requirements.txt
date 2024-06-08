@@ -1,0 +1,5 @@
+pyspellchecker
+discord-interactions
+mangum
+asgiref
+flask
