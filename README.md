@@ -1,14 +1,11 @@
-# Welcome to your CDK TypeScript project
+# Jenho Spelling Assistant
 
-This is a blank project for CDK development with TypeScript.
+A small bot that works off slash commands and is hosted on AWS Lambda. 
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+Users send a slash command, to which the bot then knows to send data to an interactions endpoint on the AWS side. Python code on AWS Lambda then takes the data and sends it back with a proper spellchecked message (if applicable).
 
-## Useful commands
+## Technologies
 
-* `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
-* `npx cdk deploy`  deploy this stack to your default AWS account/region
-* `npx cdk diff`    compare deployed stack with current state
-* `npx cdk synth`   emits the synthesized CloudFormation template
+Uses PySpellchecker library to correct spellings. Also utilizes Flask to interact with requests sent to interactions endpoint.
+
+
